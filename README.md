@@ -4,6 +4,8 @@
 
 Aplicación web inmobiliaria desarrollada como proyecto de DAW.
 
+Orientada a facilitar la búsqueda de viviendas en entornos rurales.
+
 
 
 \## Estado
