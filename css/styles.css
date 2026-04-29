@@ -1,0 +1,888 @@
+/*RASGOS GENERALES*/
+html, body{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+
+}
+p, label{
+    color: rgb(80, 76, 76);
+    font-family: Candara, sans-serif;
+    font-size: 1rem;
+}
+body{
+    /*margin: 0;
+    padding-top: 70px;
+    display:grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: calc(100vh - 70px);/*Evita el menú*/
+    padding-top: 70px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: calc(100vh - 70px);
+    
+}
+a {
+    text-decoration: none;    
+    font-family: Candara, sans-serif;
+}
+
+h1{
+    color: rgb(80, 76, 76);
+    font-family: Candara, sans-serif;
+    font-weight: bold;
+    font-size: 2.2rem;
+}
+h2, h3{
+    color: rgb(70, 84, 56);
+    font-family: Candara, sans-serif;
+}
+hr{
+    border: none;
+    height: 0;
+    background-color: rgb(215, 219, 208);
+    margin-top: 0;
+}
+.pagina{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    background: rgb(253, 251, 248);
+}
+
+
+/*CABECERA CON MENÚ*/
+header {
+    background: rgb(237, 229, 211);
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top:0;
+    z-index: 100;
+    display:flex;
+    align-items:stretch;
+    border-bottom: solid 1px rgb(215, 219, 208);
+}
+nav {
+    height: 100%;
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-self: right;
+    margin: 0;
+    padding: 0;
+    height:100%;
+}
+nav ul li {
+    display: flex; 
+    align-items: stretch;
+    height:100%;
+    font-family: Candara, sans-serif;
+    font-size: 1.1rem;
+}
+nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 100%;    
+    color: rgb(94, 111, 69);
+    text-decoration: none;
+}
+nav ul li:hover {
+    background: rgb(94, 111, 69);  
+}
+nav ul li a:hover{
+    color: rgb(237, 229, 211);
+}
+.menuSesion{
+    display:flex;
+    justify-content: right;
+    align-items:center;
+    height:100%;
+    width: 80%;
+}
+.menu{
+    height:100%;
+    display:flex;
+}
+.logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sesion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding-left: 1.5rem;
+    width: 15%;
+    }
+.sesion p {
+    font-size: 1.1rem;
+}
+.salirSesion{
+    color: rgb(94, 111, 69);
+    font-size: 0.9rem;
+}
+.salirSesion:hover{
+    color: rgb(74, 59, 59);
+}
+.botonSimulado{
+    background-color: rgb(94, 111, 69);
+    color: rgb(237, 229, 211);
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.9rem;
+    border-radius: 5px;
+}
+.botonSimulado:hover {
+    background-color: rgb(74, 59, 59);
+    box-shadow: 0 0 8px rgb(94, 111, 69, 0.5);
+}
+
+/*FOOTER*/
+footer{
+    background: rgb(237, 229, 211);
+    border-top: solid 1px rgb(215, 219, 208);
+    padding: 2rem 3rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+/*HERO CON TÍTULO Y BUSCADOR*/
+.hero{
+    position: relative;
+    background-image: url(../img/hero-index.jpg);
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh - 70px);
+}
+.hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(94, 111, 69, 0.40);
+}
+
+.hero > *{
+    position: relative;
+    z-index: 1;
+}
+
+.tituloHero{
+    font-size: 3.5rem;
+    /*color: rgb(51, 59, 42);*/
+    color: rgb(237, 229, 211);
+    filter: drop-shadow(0 0 8px rgb(74, 59, 59));
+    position: absolute;
+    top: 3rem;
+    left: 8rem;
+}
+.contenedorBuscador{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-top: 15rem;
+}
+.buscador{
+    background-color: rgb(237, 229, 211);
+    border: solid 1px rgb(215, 219, 208);
+    border-radius: 5px;
+    padding: 1rem 2rem 2.5rem 2rem;
+    width: fit-content;
+}
+.buscador a{
+    margin-left: 1rem;
+}
+
+select, input{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: rgb(253, 251, 248);
+    color: rgb(80, 76, 76);
+    font-family: Candara, sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: solid 1px rgb(215, 219, 208);
+    border-radius: 5px;
+    cursor: pointer;
+    /*margin-bottom: 1rem;*/
+}
+select{
+    width: 100%;
+    background-image: url(../img/chevron-down.svg);
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom: 1.1rem;
+}
+option {
+    font-family: Candara, sans-serif;
+    font-size: 1rem;
+    color: rgb(80, 76, 76);
+}
+textarea{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: rgb(253, 251, 248);
+    color: rgb(80, 76, 76);
+    font-family: Candara, sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: solid 1px rgb(215, 219, 208);
+    border-radius: 5px;
+    cursor: pointer;
+    width: 88%;
+    resize: none;
+}
+textarea:hover{
+    
+    box-shadow: 0 0 8px rgb(94, 111, 69, 0.5);
+}
+textarea:focus{
+    outline: none;
+    box-shadow: 0 0 8px rgb(94, 111, 69, 0.5);
+}
+input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgb(94, 111, 69, 0.5);
+}
+input:hover, select:hover {
+    box-shadow: 0 0 8px rgb(94, 111, 69, 0.5);
+}
+button{
+    background-color: rgb(94, 111, 69);
+    color: rgb(237, 229, 211);
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.9rem;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    align-self: center;
+    font-family: Candara, sans-serif;
+}
+button:hover{
+    background-color: rgb(74, 59, 59);
+    box-shadow: 0 0 8px rgb(94, 111, 69, 0.5);
+}
+.enlaces{
+    color: rgb(94, 111, 69);
+    font-weight: bold;
+    cursor: pointer;
+}
+.enlaces:hover{
+    color: rgb(74, 59, 59);
+    filter: drop-shadow(0 0 5px rgb(94, 111, 69, 0.5));
+}
+
+/*FORMULARIOS*/
+.contenedorForm{
+    margin-top: 2rem;
+    height: fit-content;  
+    width: 27rem;
+    padding: 1rem 2rem 2.2rem 2rem;
+    background: rgb(237, 229, 211);
+    border: solid 1px rgb(215, 219, 208);
+    border-radius: 5px;
+}
+.formulario, .bloqueInfo{
+    background: rgb(237, 229, 211);
+    height: auto;
+    font-family: Candara, sans-serif;
+}
+.formulario a{
+    margin-left: 1rem;
+}
+
+input[type="text"], input[type="email"], input[type="password"]{
+    width: 83%;
+    margin-bottom: 1.1rem;
+}
+
+input[type="submit"]{
+    background-color: rgb(94, 111, 69);
+    color: rgb(237, 229, 211);
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.9rem;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+}
+input[type="submit"]:hover{
+    background-color: rgb(74, 59, 59); 
+}
+.formulario input[type="text"]{
+    background-image: url(../img/user-circle.svg);
+    background-position: left 10px center;
+    padding-left: 3rem;
+    background-repeat: no-repeat;
+    background-size: 1.7rem;
+}
+input[type="email"]{
+    background-image: url(../img/icon-mail.svg);
+    background-position: left 10px center;
+    padding-left: 3rem;
+    background-repeat: no-repeat;
+    background-size: 1.7rem;
+}
+input[type="password"]{
+    background-image: url(../img/password-user.svg);
+    background-position: left 10px center;
+    padding-left: 3rem;
+    background-repeat: no-repeat;
+    background-size: 1.7rem;
+}
+input[name="asunto"]{
+    background-image: url(../img/pencil.svg);
+    background-position: left 10px center;
+    padding-left: 3rem;
+    background-repeat: no-repeat;
+    background-size: 1.7rem;
+}
+
+.contenedorEstandar{
+    width: 1200px;
+    height: fit-content;
+    margin: 1rem;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(237, 229, 211);
+    border: solid 1px rgb(215, 219, 208);
+    border-radius: 5px;
+    font-family: Candara, sans-serif;
+    overflow: hidden;
+}
+.fotoContacto{
+    width: 50%;
+    height: 750px;
+    overflow: hidden;
+}
+.fotoContacto img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+.contactoForm{
+    width: 50%;
+    padding: 0.5rem 0.5rem 2rem 2.5rem;
+}
+.contactoForm p {
+    padding-right: 2.5rem;
+    text-align: justify;
+    line-height: 1.5rem;
+}
+.telefono{
+    font-weight: bold;
+    font-size: 1.5rem;
+    color:rgb(94, 111, 69);
+    padding: -1rem;
+
+}
+.fotoSomos{
+    width: 50%;
+    height: 700px;
+    overflow: hidden;
+}
+.fotoSomos img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.infoSomos{
+    width: 50%;
+    padding: 1rem 3rem 1.5rem 3rem;
+}
+.infoSomos p{
+    text-align: justify;
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+/*APARTADO INMUEBLES Y FILTROS*/
+.contenedorInmuebles{
+    width: 1200px;
+    margin: 1rem;
+}
+.contenedorFiltros{
+    max-width: fit-content;
+    margin-top: 0.5rem;
+    padding: 1.5rem 2rem;
+    background: rgb(237, 229, 211);
+    border: solid 1px rgb(215, 219, 208);
+    border-radius: 5px;
+    display: none;
+}
+.contenedorFiltros.mostrar{
+    max-height: fit-content;
+    display: block;
+} 
+
+input[type="checkbox"]{
+    appearance: checkbox;
+    -webkit-appearance:checkbox;
+    -moz-appearance:checkbox;
+}
+
+/*TARJETAS DE LOS INMUEBLES*/
+.contenedorCards{
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+.card{
+    width: 100%;
+    margin: 1rem 0rem;
+    height: fit-content;
+    background: rgb(237, 229, 211);
+    border: solid 1px rgb(215, 219, 208);
+    border-radius: 5px;
+    display: flex;
+    overflow: hidden;
+}
+
+.card:hover{
+    cursor: pointer;
+    box-shadow: 0 0 8px rgb(94, 111, 69, 0.5);
+}
+.fotoCard {
+    width: 700px;
+    aspect-ratio: 3 / 2;
+    /*height: auto;*/
+    overflow: hidden;
+}
+.fotoCard img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.infoCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.2rem 2rem 1rem 2rem;
+    width: 100%;
+
+}
+.topCard {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin:0;
+}
+.ubicacionCard {
+    margin-top: -4rem;
+}
+.tituloCard{
+    font-size: 1.5rem;
+}
+.precioCard {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.datosCard{
+    display: grid;
+    grid-template-columns: 1.4fr 1.4fr 1fr;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: 
+    "viv hab ."
+    "terr banos estado";
+}
+.metros-viv, .metros-terr, .num-habitaciones, .num-banos, .estado-viv{
+    display: flex;
+    align-self: center;
+    align-items: center;
+}
+
+.metros-viv {
+    grid-area: viv;
+}
+.metros-terr {
+    grid-area: terr;
+}
+.num-habitaciones{
+    grid-area: hab;
+}
+.num-banos{
+    grid-area: banos;
+}
+.estado-viv{
+    grid-area: estado;
+    display: grid;
+    grid-template-columns: 0.4fr 2fr;
+}
+.datosCard p {
+    margin-left: 0.5rem;
+}
+.aviso {
+    margin: 1.5rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    max-width: 100%;
+}
+.exito{
+    font-size: 1.2rem;
+}
+.noResult:hover{
+    box-shadow: none;
+    cursor: default;
+}
+
+/*PÁGINA DETALLES INMUEBLES*/
+.todoDetalles{
+    display: flex;
+    flex-direction: column;
+    width: 1100px;
+    align-items: center;
+}
+.contenedorDetalles{
+    max-width: fit-content;
+    padding: 1.5rem 2rem ;
+    margin: 1rem;
+    background: rgb(237, 229, 211);
+    border: solid 1px rgb(215, 219, 208);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.carrusel{
+    width: 1000px;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+    border: solid 1px rgb(215, 219, 208);
+    border-radius: 5px;
+}
+.fotosInmueble{
+    width: 100%;
+    height: 100%;
+}
+#fotoCarrusel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.zonaHover{
+    position: absolute;
+    display: flex;
+    width: 10%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 2;
+    cursor: pointer;
+}
+#botonAnterior{
+    left: 0;
+}
+#botonSiguiente{
+    right: 0;
+}
+.topDetalles{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.subTopDetalles{
+    margin-top: -2rem;
+}
+.estadoDetalles{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: left;
+}
+.estado{
+    display: flex;
+    align-items: center;
+}
+.botonRef{
+    border: solid 2px rgb(94, 111, 69);
+    border-radius: 5px;
+    padding: 0.3rem 0.5rem;
+    font-weight: bold;
+    color: rgb(94, 111, 69);
+}
+.botonRef:hover{
+    border-color:rgb(74, 59, 59);
+    color: rgb(74, 59, 59);
+    background-color: rgb(94, 111, 69, 0.5);
+}
+
+.botonesDetalle {
+    display: flex;
+    margin: 0.6rem 0 1rem 0;
+    gap: 3rem;
+    
+}
+.caracteristicasDetalles{
+    display: flex;
+    flex-direction: column;
+}
+.contenedorDetalles p{
+    margin-left: 0.5rem;
+}
+.contenedorDetalles ul{
+    margin-top: -0.3rem;
+}
+.datosInmueble{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: 
+    "viv hab"
+    "terr banos";
+}
+
+.extrasInmuebles{
+    display: flex;
+    flex-direction: column;
+}
+.accesoInmueble, .internetInmueble{
+    display: flex;
+    align-items: center;
+}
+.listado{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.descripcionMunicipio{
+    margin: -0.2rem 2rem 1rem 2rem;
+}
+/*PANEL USUARIOS*/
+.contenedorUsuarios{
+    width: 1200px;
+    height: fit-content;
+    margin: 1rem;
+    padding: 3rem;
+    background: rgb(237, 229, 211);
+    border: solid 1px rgb(215, 219, 208);
+    border-radius: 5px;
+    font-family: Candara, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+.contenedorUsuarios h1{
+    color: rgb(94, 111, 69);
+    
+}
+.panelUsuarios{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    padding: 2rem;
+    width: 94%;
+}
+.panelUsuarios div{
+    display: flex;
+    justify-content: center;
+}
+/*FORM CREAR INMUEBLES*/
+.contenedorFlex{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 1.5rem 3rem 2.5rem 3rem;
+}
+.contenedorFlex input, .contenedorFlex select, .contenedorFlex textarea{
+    margin: 0.5rem 0rem 1rem 0rem ;
+    width: 50%;
+}
+.contenedorFlex input[type=checkbox]{
+    margin-right: 0.5rem ;
+    width: auto;
+}
+.contenedorFlex select{
+    width: 53%;
+}
+
+/*GESTION INMUEBLES*/
+.botonesGestion{
+    display: flex;
+    justify-content: space-between;
+}
+.editarInm{
+    display: flex;
+    gap: 3rem;
+    
+}
+.editarInm a:hover, .editarDet a:hover{
+    color: rgb(45, 93, 148);
+}
+.editarInm .enlaces:hover .tool, .editarDet .enlaces:hover .tool{
+    stroke: rgb(45, 93, 148);
+}
+.contenedorFiltros input[type=text]{
+    margin: 1.1rem 0rem 2rem 0rem ;
+    width: 92%;
+}
+.editarDet{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 0.5rem;
+}
+
+/*PAGINA Y BOTONES FAVORITOS */
+.baseFavorito{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    margin: 1.3rem 0 0.5rem 0;
+
+}
+.quitarFav, .editarInm{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    cursor: pointer;
+}
+.quitarFav a, .editarInm a{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.favoritoCard:hover{
+    cursor: default;
+}
+.enlaceFav{
+    width: fit-content;
+}
+.quitarFav .enlaces:hover, .editarInm button:hover, .editarDet button:hover{
+    color: rgb(146, 37, 37);
+}
+.quitarFav .enlaces:hover .trash, .editarInm button:hover .trash, .editarDet button:hover .trash {
+    stroke: rgb(146, 37, 37);
+}
+
+.quitarFav .favGuarda:hover{
+    color: rgb(74, 59, 59);
+}
+.quitarFav .favGuarda:hover .heart{
+    stroke: rgb(74, 59, 59);
+    fill: transparent;
+}
+.quitarFav .heart{
+    stroke: rgb(74, 59, 59);
+    fill:rgb(170, 59, 120, 0.7);
+    transition: fill 0.8s ease;
+}
+.favGuarda{
+    font-size: 1rem;
+}
+.botonGuardar{
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+}
+.botonGuardar:hover{
+    background: none;
+    box-shadow: none;
+}
+.botonGuardar:hover .heart{
+    stroke: rgb(74, 59, 59);
+    fill: rgb(170, 59, 120, 0.6);
+}
+.botonGuardar .heart{
+    fill: transparent;
+    transition: fill 0.8s ease;
+}
+.agregarSinSesion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.botonFalso{
+    display: none;
+    color: rgb(94,111,69);
+    width: 11rem;
+    font-family: Candara, sans-serif;
+    font-size: 0.8rem;
+}
+.botonFalso a{
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(94,111,69);
+}
+.botonFalso a:hover{
+    color: rgb(74, 59, 59);
+}
+
+
+/*MANEJO ICONOS*/
+.icon-rule{
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: rgb(94,111,69);
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    margin-right: -0.2rem;
+}
+.icons{
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: rgb(94,111,69);
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.estado-entrar{
+    fill:rgba(104, 187, 37, 0.726);
+}
+.estado-reformar{
+    fill: rgba(187, 134, 37, 0.726);
+}
+.estado-ruina{
+    fill: rgba(187, 42, 37, 0.726);
+}
+.icon-left, .icon-right{
+    width: 100px;
+    height: 100px;
+    fill: none;
+    stroke: rgba(237, 229, 211, 0.8);
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 8px rgb(94, 111, 69, 0.8));
+}
+.icon-left:hover, .icon-right:hover{
+    stroke: rgb(94,111,69, 0.8);
+}
+.heart{
+    width: 38px;
+    height: 38px;
+}
+
+/*MENSAJES VALIDACION*/
+.mensaje{
+    font-family: Candara, sans-serif;
+    font-size: 0.8rem;
+    color: rgb(146, 37, 37);
+    margin: -0.9rem 1rem -0.3rem 1rem;
+}
+

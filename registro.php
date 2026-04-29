@@ -1,5 +1,6 @@
 <?php
     session_start();
+    
     require_once "conexionBD.php";
 
     if ($_SERVER ["REQUEST_METHOD"] == "POST"){
@@ -10,7 +11,7 @@
         $rol = "usuario"; //por defecto sólo se registran usuarios
 
         if(empty($nombre) || empty($email) || empty($password)){
-            die ("Han de rellenarse todos los campos.");
+            $error= "Han de rellenarse todos los campos.";
         }
 
         //protección de contraseña para la bbdd
@@ -25,10 +26,10 @@
             $stmt->bindParam(":password", $hashed);
             $stmt->bindParam(":rol",$rol);
 
-            $stmt-> execute();
+            $stmt->execute();
 
             //si el registro es exitoso envía al formulario de login
-            header("Location: login_form.php");
+            header("Location: login_form.php?registro=ok");
             exit();
 
         } catch (PDOException $e){

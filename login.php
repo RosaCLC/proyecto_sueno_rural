@@ -8,8 +8,9 @@
         $email = trim($_POST["email"] ?? "");
         $password = $_POST["password"] ?? "";
 
-        if (empty($email) || empty($password)){
-            die ("Han de rellenarse ambos campos.");
+        /*Error que se mostrará si se envía el formulario vacío*/
+        if(empty($email) || empty($password)){
+            $error = "Han de rellenarse ambos campos.";
         }
 
         try{
@@ -18,8 +19,8 @@
 
             //declaración PDO para preparar la consulta, se asocia al email y se ejecuta
             $stmt = $conexion->prepare($sql);
-            $stmt-> bindParam (":email", $email, PDO::PARAM_STR);
-            $stmt-> execute();
+            $stmt->bindParam(":email", $email, PDO::PARAM_STR);
+            $stmt->execute();
 
             //se recoge el resultado de la búsqueda
             $usuario = $stmt->fetch(PDO::FETCH_ASSOC);

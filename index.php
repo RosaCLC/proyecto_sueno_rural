@@ -16,48 +16,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\styles.css">
     <title>SUEÑO RURAL</title>
 </head>
 <body>
-    <?php if(isset($_SESSION['id_usuario'])):?>
-        <p>¡Hola, <a href="perfil_usuario.php"><?php echo htmlspecialchars($_SESSION['nombre_usuario']);?></a>!<br>
-        <a href="logout.php">Cerrar sesión</a>
-    </p>
-    <?php else:?>
-        <p>
-            <a href="login_form.php">Inicia sesión</a> <br>
-            <a href="registro_form.php">Regístrate</a>
-        </p>
-    <?php endif; ?>    
-    <h1>Busca tu inmueble</h1>
-    <form action="resultados.php" method="GET">
-        
-        <select name="region" id="region">
-            <option value="" selected disabled>-Selecciona una región-</option>
-            <option value="">Todas las regiones</option>
-            <?php foreach ($regiones as $fila_region):?>
-                <option value="<?php echo $fila_region['region_municipio']; ?>">
-                    <?php echo $fila_region['region_municipio']; ?>
-                </option>
-            <?php endforeach; ?>
-        </select> <br>
+    <?php require_once "header.php"?>
+    <section class="hero">
+        <div class="sobrehero">
+            <h1 class="tituloHero">Encuentra el hogar de tus sueños</h1>
+            <div class="contenedorBuscador">
+                <div class="buscador">
+                    <h2>Busca un inmueble:</h2>
+                    <form id="buscador"  action="<?php echo (isset($_SESSION['rol_usuario']) && $_SESSION['rol_usuario'] === 'administrador') 
+                    ? 'gestion_inmuebles.php'
+                    :'lista_inmuebles.php'?>" method="GET">
+                        <select name="region" id="region">
+                            <option value="" selected disabled>Selecciona una región</option>
+                            <option value="">Todas las regiones</option>
+                            <?php foreach ($regiones as $fila_region):?>
+                                <option value="<?php echo $fila_region['region_municipio']; ?>">
+                                    <?php echo $fila_region['region_municipio']; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select> <br>
 
-        <select name="tipo" id="tipo">
-            <option value="" selected disabled>-Selecciona el tipo de inmueble-</option>
-            <option value="">Todos los tipos</option>
-            <option value="casa">Casa</option>
-            <option value="piso">Piso</option>
-            <option value="cabana">Cabaña</option>
-            <option value="terreno">Terreno</option>
-        </select> <br>
+                        <select name="tipo" id="tipo">
+                            <option value="" selected disabled>Selecciona el tipo de inmueble</option>
+                            <option value="">Todos los tipos</option>
+                            <option value="casa">Casa</option>
+                            <option value="piso">Piso</option>
+                            <option value="cabana">Cabaña</option>
+                            <option value="terreno">Terreno</option>
+                        </select> <br>
 
-        <input type="number" name="min" placeholder="Escriba el precio mínimo">
-        <input type="number" name="max" placeholder="Escriba el precio máximo">
-        <br><br>
+                        <input type="number" id="precioMin" name="min" min="0" step="1" placeholder="Precio mínimo">                    
+                        <input type="number" id="precioMax" name="max" min="0" step="1" placeholder="Precio máximo"><br>
+                        <span class="mensaje errorPrecioMin errorPrecioMax"></span>
+                        <br><br>
 
-        <button type="submit" name="buscar" value="1">Buscar</button>
-        <p> o </p>
-        <a href="resultados.php?buscar=1">Ver todos los inmuebles</a>
-    </form>
+                        <button type="submit" name="buscar" value="1">Buscar</button>
+                        <a class="enlaces" href="<?php echo (isset($_SESSION['rol_usuario']) && $_SESSION['rol_usuario'] === 'administrador') 
+                        ? 'gestion_inmuebles.php'
+                        :'lista_inmuebles.php'?>?buscar=1">Ver todos los inmuebles</a>
+                    </form>
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+    <script type="module" src="js/script.js"></script>
 </body>
 </html>
