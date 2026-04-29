@@ -2,25 +2,35 @@
 
 
 
-Aplicación web inmobiliaria desarrollada como proyecto de DAW.
+Aplicación web inmobiliaria desarrollada como proyecto final del ciclo DAW.
 
-Orientada a facilitar la búsqueda de viviendas en entornos rurales.
+Orientada a facilitar la búsqueda de inmuebles en entornos rurales.
+
+
 
 
 
 \## Estado
 
-Proyecto en desarrollo
+Proyecto funcional con fines educativos.
+
+Posibles mejoras futuras:
+
+\- Mejoras de interfaz y experiencia usuario
+
+\- Gestión de fotos, municipios y servicios mediante formularios
+
+\- Calculadora de reformas
+
+\- Reestructuración de la arquitectura a una más modular MVC
+
+\- Integración de mapas
 
 
 
-\## Tecnologías
+\## Tecnologías empleadas
 
-\- HTML
-
-\- CSS
-
-\- JavaScript
+\- HTML, CSS, JavaScript
 
 \- PHP
 
@@ -36,27 +46,48 @@ Proyecto en desarrollo
 
 \- Gestión de favoritos
 
-\- Visualización de inmuebles
+\- Visualización de inmuebles y fotografías
+
+\- Diferenciación de roles (usuario/administrador)
 
 
 
 \## Cómo ejecutar
 
-1\. Copiar la carpeta en htdocs (XAMPP)
+1. Clona el repositorio: git clone https://github.com/RosaCLC/proyecto\_sueno\_rural.git 
 
-2\. Iniciar Apache y MySQL
+2\. Copiar la carpeta en htdocs (XAMPP)
 
-3\. Importar la base de datos (archivo .sql)
+3\. Iniciar Apache y MySQL
 
-4\. Acceder a localhost
+4\. Importar la base de datos (archivo .sql)
+
+5\. Acceder a localhost desde el navegador: http://localhost/PROYECTO\_Sueno\_Rural/
 
 
 
-\## Mejoras futuras
+\## Usuarios de prueba
 
-\- Mejoras de diseño
+1. Administrador
+* Email: admin@admin.admin
+* Contraseña: Admin123
 
-\- Validaciones
+2\. Usuario
 
-\- Optimización del código
+* Email: usuario@usuario.usuario
+* Contraseña: Usuario123
+
+
+
+\## Autora
+
+Rosa López
+
+
+
+\## Licencia
+
+Proyecto desarrollado con fines educativos
+
+&#x09;
 
